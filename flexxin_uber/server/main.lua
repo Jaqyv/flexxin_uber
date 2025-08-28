@@ -37,8 +37,8 @@ RegisterCommand('requestuber', function(source, args, rawCommand)
     TriggerClientEvent('esx_uber:requestUber', source)
 end, false)
 
-RegisterNetEvent('esx_uber:sendUberRequest')
-AddEventHandler('esx_uber:sendUberRequest', function(currentLocation, destination)
+RegisterNetEvent('flexin_uber:sendUberRequest')
+AddEventHandler('flexin_uber:sendUberRequest', function(currentLocation, destination)
     local playerId = source
     local xPlayer = ESX.GetPlayerFromId(playerId)
 
@@ -109,7 +109,7 @@ RegisterCommand('acceptcall', function(source, args, rawCommand)
     })
 
     local requesterCoords = callIDLocations[callID]
-    TriggerClientEvent('esx_uber:setGPS', playerId, requesterCoords)
+    TriggerClientEvent('flexin_uber:setGPS', playerId, requesterCoords)
 end, false)
 
 RegisterCommand('finishride', function(source, args, rawCommand)
@@ -140,3 +140,4 @@ RegisterCommand('finishride', function(source, args, rawCommand)
         args = { 'Uber Ride', 'You have finished the ride for Call ID: ' .. callID .. '.' }
     })
 end, false)
+
